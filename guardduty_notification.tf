@@ -3,11 +3,10 @@
 #   }
 
 #create a zip file of our source code (python) to deploy it into lambda
-provider "archive" {}
 data "archive_file" "zip" {
   type        = "zip"
   source_file = "${path.module}/guardduty_notification.py"
-  output_path = "${path.module}/guardduty_notification.zip"
+  output_path = "${path.module}/guardduty_notification_${timestamp()}.zip"
 }
 
 data "aws_iam_policy_document" "guardduty_notification_trusted_policy" {
