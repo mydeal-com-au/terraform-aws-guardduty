@@ -30,6 +30,12 @@ variable "enable_notifications" {
 
 variable "lambda_name" {
   description = "Name of the Lambda Function"
+  type        = string
+  default     = "guardduty_alarms"
+  validation {
+    condition     = var.enable_notifications ? length(var.lambda_name) > 0 : true
+    error_message = "Lambda name must not be empty"
+  }
 }
 
 variable "sns_email_arn" {
