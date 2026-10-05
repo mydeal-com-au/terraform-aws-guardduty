@@ -30,6 +30,7 @@ This module creates the "member" side of Guardduty, with the assumption that the
 | alarm\_slack\_webhook | Slack Incoming Web Hook URL. Leave blank to disable alarm to slack | `string` | `""` | no |
 | create\_invite\_accepter | Create GuardDuty Member Invite Accepter. Not needed if already setup as part of an organization | `bool` | `true` | no |
 | enable\_detector | Enable GuardDuty Member Detector | `bool` | `true` | no |
+| enable\_notifications | Enable GuardDuty finding notifications | `bool` | `false` | no |
 | enabled | The boolean flag whether this module is enabled or not. No resources are created when set to false. | `bool` | `true` | no |
 | lambda\_name | Name of the Lambda Function | `any` | n/a | yes |
 | member\_detector\_id | GuardDuty Detector ID for member account. Only needed if enable\_detector is false. Used for targeting any previously enable detector | `string` | `""` | no |
